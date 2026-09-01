@@ -1,0 +1,11 @@
+# Build
+build/
+*.o
+*.out
+
+# Tests
+tests/
+/test_*
+
+# macOS
+.DS_Store
