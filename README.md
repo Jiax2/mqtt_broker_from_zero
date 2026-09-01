@@ -25,4 +25,40 @@ src/
 └── pack.h
 ```
 
-The next step is **Part 2 — Networking**, where the TCP communication layer will be implemented.
+## Part 2 — Networking
+
+The second part implements the networking layer using non-blocking TCP sockets.
+
+Currently implemented:
+
+- TCP socket creation and binding
+- Non-blocking sockets
+- Client connections
+- Send and receive helpers
+- Event loop and callbacks
+- Basic networking test
+
+The original tutorial uses Linux-specific APIs such as `epoll`.
+
+This project is adapted to run natively on **macOS**, using:
+
+- `epoll` → `kqueue`
+- `timerfd` → `EVFILT_TIMER`
+- `MSG_NOSIGNAL` → `SO_NOSIGPIPE`
+
+### Project structure
+
+```text
+src/
+├── mqtt.c
+├── mqtt.h
+├── network.c
+├── network.h
+├── pack.c
+└── pack.h
+
+tests/
+└── test_network.c
+```
+
+The next step is to continue building the event-driven networking layer using `kqueue`.
