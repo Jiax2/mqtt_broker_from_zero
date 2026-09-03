@@ -56,9 +56,4 @@ src/
 ├── network.h
 ├── pack.c
 └── pack.h
-
-tests/
-└── test_network.c
 ```
-
-The next step is to continue building the event-driven networking layer using `kqueue`.
